@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_form_builder/flutter_form_builder.dart'; // أضفنا المكتبة هنا
-import 'package:form_builder_validators/form_builder_validators.dart'; // أضفنا المكتبة هنا
+import 'package:flutter_form_builder/flutter_form_builder.dart'; 
+import 'package:form_builder_validators/form_builder_validators.dart';
 
 void main() => runApp(MyApp());
 
@@ -23,7 +23,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final _formKey = GlobalKey<FormBuilderState>(); // غيرنا نوع المفتاح لـ FormBuilderState
+  final _formKey = GlobalKey<FormBuilderState>(); 
   String _email = '';
   String _password = '';
 
@@ -36,17 +36,17 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: FormBuilder( // استبدلنا Form بـ FormBuilder
+        child: FormBuilder( 
           key: _formKey,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text('Login', style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold)),
               SizedBox(height: 40),
-              FormBuilderTextField( // استبدلنا TextFormField بـ FormBuilderTextField
-                name: 'email', // أضفنا اسم للحقل عشان نستخدمه في الفالديشن
+              FormBuilderTextField( 
+                name: 'email', 
                 decoration: InputDecoration(labelText: 'Email', border: OutlineInputBorder()),
-                validator: FormBuilderValidators.compose([ // استخدمنا FormBuilderValidators
+                validator: FormBuilderValidators.compose([ 
                   FormBuilderValidators.required(errorText: 'Please enter your email'),
                   FormBuilderValidators.email(errorText: 'Invalid email'),
                 ]),
